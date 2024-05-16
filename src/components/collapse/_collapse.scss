@@ -1,0 +1,77 @@
+@import '../../styles/utils/mixins';
+@import '../../styles/utils/variables';
+@import '../../styles/utils/placeHolders';
+
+.collapse {
+  width: 100%;
+  margin: 20px auto;
+
+  &__header {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .collapse__header-button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      .chevron-up {
+        fill: $secondary-color;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+
+      &.open .chevron-up {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__content {
+    background-color: $secondary-color;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; // Ajouté la transition pour le padding
+    padding: 0 10px;
+
+    &.open {
+      padding: 10px;
+    }
+
+    p {
+      color: $font-color;
+      margin: 0;
+    }
+  }
+}
+
+.collapse-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .description-button, .equipments-button {
+    flex: 1;
+    text-align: left;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

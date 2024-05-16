@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;  // Réduisez la marge si nécessaire pour éviter le débordement
+    width: 100%;  // Assurez-vous que le header utilise toute la largeur de la vue
+  
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding: 20px 100px;  // Ajustez le padding pour grandes résolutions
+    }
+  
+    &__fig {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      width: auto;  // Utilisez auto pour la largeur si le logo est redimensionnable
+      img {
+        max-width: 100%;  // Assurez que l'image ne déborde pas de son conteneur
+        height: auto;  // Hauteur auto pour maintenir l'aspect ratio
+      }
+    }
+  }
+  

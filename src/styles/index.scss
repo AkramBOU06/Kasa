@@ -1,0 +1,19 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./globalStyle";
+@import "./utils/placeHolders";
+@import "../components/nav/nav";   // Assurez-vous que le chemin et le nom du fichier sont corrects
+@import "../components/header/header";
+@import "../components/banner/banner";
+@import "../components/gallery/gallery";
+@import "../components/card/card"; // Chemin corrigé comme montré précédemment
+@import "../components/footer/footer";
+@import "../components/collapse/collapse";
+@import "../components/tag/tag";
+@import "../components/host/host";
+@import "../components/rating/rating";
+@import "../components/logement/ficheLogement";
+@import "../components/carrousel/carrousel";
+@import "../components/error/errorPage";  // Utilisation correcte sans le tiret bas ni l'extension .scss
+@import "../pages/about";
+

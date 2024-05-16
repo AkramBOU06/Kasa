@@ -1,0 +1,17 @@
+.starsContainer {
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    width: 20px;
+    height: 20px;
+    margin-left: 4px;
+
+    @media screen and (min-width: $breakpoint-desktop) {
+        width: 30px;
+        height: 30px;
+        margin-left: 7px;
+    }
+}

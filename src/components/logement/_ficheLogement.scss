@@ -1,0 +1,151 @@
+
+$primary-color: #FF6060;
+$secondary-color: #FFF;
+$background-color: #F7F7F7;
+$font-color: #000;
+
+$breakpoint-desktop: 768px;
+
+
+@mixin mobile {
+  @media (max-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// Fiche Logement Container
+.fiche-container {
+  margin: auto;
+  background: $secondary-color;
+  padding: 20px;
+  color: $font-color;
+
+  @include mobile {
+    padding: 10px; 
+  }
+
+  .hostInfo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start; 
+    }
+
+    .title-tags-container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title-container {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+
+        h1 {
+          font-size: 36px; 
+          color: $primary-color;
+          margin: 0 0 5px 0;
+
+          @include mobile {
+            font-size: 24px; 
+          }
+        }
+
+        h3 {
+          font-size: 18px; 
+          margin: 0;
+
+          @include mobile {
+            font-size: 16px; 
+          }
+        }
+      }
+
+      .tags-container {
+        display: flex;
+        gap: 5px;
+        margin-top: 10px;
+
+        .tag-button {
+          padding: 5px 10px;
+          @include mobile {
+            padding: 2px 5px; 
+          }
+        }
+
+        @include mobile {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    .rate-host-container {
+      display: flex;
+      flex-direction: column; 
+      align-items: flex-end;
+
+      @include mobile {
+        flex-direction: row-reverse; 
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 10px; 
+      }
+
+      .host-container {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse; 
+        margin-bottom: 10px;
+
+        @include mobile {
+          order: 2; 
+          justify-content: flex-end; 
+          margin-bottom: 0;
+        }
+      }
+
+      .rate-container {
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+          order: 2; 
+          justify-content: flex-start; 
+        }
+      }
+    }
+  }
+
+  .collapse-fiche-container {
+    display: flex;
+    justify-content: space-between; 
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .collapse {
+      flex: 1; 
+      margin-bottom: 20px; 
+      width: 335px;
+      height: 30px;
+
+      &:not(:first-child) {
+        margin-left: 20px; 
+
+        @include mobile {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.host {
+    display: flex;
+    flex-direction: row; // Desktop: ligne inverse pour mettre l'image à droite
+    align-items: center;
+  
+    @include mobile {
+      flex-direction: row; // Mobile: flex en ligne normale
+      justify-content: flex-end; // Aligne à droite pour mobile
+    }
+  
+    &__name {
+      @include font(18px, 500);
+      margin-right: 10px;
+      color: $primary-color;
+      text-align: right;
+      width: 93px;
+      position: relative;
+      top: 8px;
+      right: 5px;
+  
+      @include mobile {
+        font-size: 14px; // Taille ajustée pour mobile
+        top: 0;
+        right: 0;
+      }
+    }
+  
+    &__image {
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+  
+      @include mobile {
+        width: 40px; // Ajustement pour mobile
+        height: 40px;
+      }
+    }
+  }
